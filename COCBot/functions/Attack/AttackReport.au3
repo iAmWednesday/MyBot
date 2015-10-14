@@ -126,6 +126,37 @@ Func AttackReport()
 	$AtkLogTxt &= $LeagueShort & "|"
 	SetAtkLog($AtkLogTxt)
 
+   ; ==================== Begin MBStats Mod ====================
+   SetLog("Sending attack report to mbstats.net...", $COLOR_BLUE)
+   $MyApiKey = "7e2ca211fc3488ea995edc829313d93d" ; <---- insert api key here
+   $sPD = 'apikey=' & $MyApiKey & '&ctrophy=' & $iTrophyCurrent & '&cgold=' & $iGoldCurrent & '&celix=' & $iElixirCurrent & '&cdelix=' & $iDarkCurrent & '&search=' & $SearchCount & '&gold=' & $iGoldLast & '&elix=' & $iElixirLast & '&delix=' & $iDarkLast & '&trophy=' & $iTrophyLast & '&bgold=' & $iGoldLastBonus & '&belix=' & $iElixirLastBonus & '&bdelix=' & $iDarkLastBonus & '&stars=' & $starsearned & '&thlevel=' & $iTownHallLevel & '&log='
+
+   $tempLogText = _GuiCtrlRichEdit_GetText($txtLog, True)
+   For $i = 1 To StringLen($tempLogText)
+	  $acode = Asc(StringMid($tempLogText, $i, 1))
+	  Select
+		 Case ($acode >= 48 And $acode <= 57) Or _
+			   ($acode >= 65 And $acode <= 90) Or _
+			   ($acode >= 97 And $acode <= 122)
+			$sPD = $sPD & StringMid($tempLogText, $i, 1)
+		 Case $acode = 32
+			$sPD = $sPD & "+"
+		 Case Else
+			$sPD = $sPD & "%" & Hex($acode, 2)
+	  EndSelect
+   Next
+
+   $oHTTP = ObjCreate("winhttp.winhttprequest.5.1")
+   $oHTTP.Open("POST", "https://mbstats.net/api/log.php", False)
+   $oHTTP.SetRequestHeader("Content-Type", "application/x-www-form-urlencoded")
+
+   $oHTTP.Send($sPD)
+
+   $oReceived = $oHTTP.ResponseText
+   $oStatusCode = $oHTTP.Status
+   SetLog("Report sent. " & $oStatusCode & " " & $oReceived, $COLOR_BLUE)
+   ; ===================== End MBStats Mod =====================
+
 	; Share Replay
 	If $iShareAttack = 1 Then
 		If (Number($iGoldLast) >= Number($iShareminGold)) And (Number($iElixirLast) >= Number($iShareminElixir)) And (Number($iDarkLast) >= Number($iSharemindark)) Then
