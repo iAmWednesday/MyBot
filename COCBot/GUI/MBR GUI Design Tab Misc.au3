@@ -42,7 +42,7 @@ Local $x = 30, $y = 205
 		$cmbProfile = GUICtrlCreateCombo("01", $x + 75, $y - 5, 40, -1, BitOR($CBS_DROPDOWNLIST, $CBS_AUTOHSCROLL))
 		$txtTip = "Use this to switch to a different profile. Default: 01" & @CRLF & "Your profiles/configs can be found in:" & @CRLF &  $sProfilePath
 		GUICtrlSetTip(-1, $txtTip)
-		GUICtrlSetData(-1, "02|03|04|05|06", "01")
+        GUICtrlSetData(-1, "02|03|04|05|06|07|08|09|10|11|12", "01")
 		GUICtrlSetOnEvent(-1, "cmbProfile")
 		$txtVillageName = GUICtrlCreateInput("MyVillage", $x + 120, $y - 4, 130, 18, BitOR($SS_CENTER, $ES_AUTOHSCROLL))
 		GUICtrlSetLimit (-1, 100, 0)
