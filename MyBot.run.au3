@@ -23,7 +23,7 @@
 #pragma compile(FileVersion, 4.2)
 #pragma compile(LegalCopyright, © https://mybot.run)
 
-$sBotVersion = "v4.2"
+$sBotVersion = "v4.2.2-savvis"
 $sBotTitle = "My Bot " & $sBotVersion
 Global $sBotDll = @ScriptDir & "\MBRPlugin.dll"
 
