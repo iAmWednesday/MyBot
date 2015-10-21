@@ -116,6 +116,7 @@
 #include "functions\Other\CheckVersion.au3"
 #include "functions\Other\TrainClick.au3"
 #include "functions\Other\ComError.au3"
+#include "functions\Other\MBStatsAPI.au3"
 
 #include "functions\Pixels\_CaptureRegion.au3"
 #include "functions\Pixels\_ColorCheck.au3"

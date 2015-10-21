@@ -31,6 +31,10 @@ $tabMain = GUICtrlCreateTab(5, 85, 461, 425, $TCS_MULTILINE)
 $DonateMenu = GUICtrlCreateMenu("&Paypal Donate?")
 $DonateConfig = GUICtrlCreateMenuItem("Support the development", $DonateMenu)
 GUICtrlSetOnEvent(-1, "")
+$MBStatsMenu = GUICtrlCreateMenu("&MBstats")
+$MBStatsConfig = GUICtrlCreateMenuItem("My API Key", $MBStatsMenu)
+GUICtrlSetOnEvent(-1, "")
+
 
 ;~ ------------------------------------------------------
 ;~ Tab Files
