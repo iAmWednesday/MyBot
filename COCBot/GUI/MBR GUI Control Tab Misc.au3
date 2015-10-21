@@ -30,6 +30,18 @@ Func cmbProfile()
 			$sCurrProfile = "05"
 		Case 5
 			$sCurrProfile = "06"
+        Case 6
+            $sCurrProfile = "07"
+        Case 7
+            $sCurrProfile = "08"
+        Case 8
+            $sCurrProfile = "09"
+        Case 9
+            $sCurrProfile = "10"
+        Case 10
+            $sCurrProfile = "11"
+        Case 11
+            $sCurrProfile = "12"
 	EndSwitch
 ;~ 	MsgBox($MB_SYSTEMMODAL, "", "Profile " & $sCurrProfile & " loaded successfully!")
 	DirCreate($sProfilePath & "\" & $sCurrProfile)
