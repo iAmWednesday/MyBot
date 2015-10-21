@@ -510,6 +510,10 @@ Func readConfig() ;Reads config and sets it to the variables
 		$ichkLanguage = IniRead($config, "General", "ChkLanguage", "1")
 		$ichkVersion = IniRead($config, "General", "ChkVersion", "1")
 
+		;MBStats API
+		$ichkMBStatsAPI = IniRead($config, "other", "chkMBStatsAPI", "0")
+		$MBStatsAPI = IniRead($config, "other", "MBStatsAPI", "")
+
 	Else
 		Return False
 	EndIf

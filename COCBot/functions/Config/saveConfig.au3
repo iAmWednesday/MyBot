@@ -1144,6 +1144,12 @@ Func saveConfig() ;Saves the controls settings to the config
 		IniWrite($config, "General", "ChkVersion", 0)
 	EndIf
 
+	;MBStats API
+	If $ichkMBStatsAPI = 1 Then
+		IniWrite($config, "other", "chkMBStatsAPI", 1)
+	EndIf
+	IniWrite($config, "other", "MBStatsAPI", $MBStatsAPI)
+
 	FileClose($config)
 
 EndFunc   ;==>saveConfig

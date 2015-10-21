@@ -655,4 +655,6 @@ Global $League[16][4] = [ _
 Global $iTaBChkAttack = 0x01
 Global $iTaBChkIdle = 0x02  ; Define global variables for Take a Break early detection types
 
-
+; MBStats API
+Global $ichkMBStatsAPI = 0
+Global $MBStatsAPI
