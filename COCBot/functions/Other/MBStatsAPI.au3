@@ -18,10 +18,12 @@ Func MBStatsAPI()
 
 	Local  $sInputboxMBStatsAPI
 
-			$sInputboxMBStatsAPI = InputBox("MBStatsAPI", "Current API: " & $MBStatsAPI & "`nEnter your MBStats API from the www.mbstats.net website:", "", "", Default, Default, Default, Default, 240, $frmbot)
-			$MBStatsAPI = $sInputboxMBStatsAPI
-			$ichkMBStatsAPI = 1
-			Setlog("MBStats API input = " & $MBStatsAPI, $COLOR_GREEN) ; log the new MBStats API
-
+			$sInputboxMBStatsAPI = InputBox("MBStatsAPI", "Current API: " & $MBStatsAPI & @CRLF & @CRLF & "Enter your MBStats API from the www.mbstats.net website:", $MBStatsAPI, "", Default, Default, Default, Default, 240, $frmbot)
+			if $sInputboxMBStatsAPI <> "" Then
+				$MBStatsAPI = $sInputboxMBStatsAPI
+				$ichkMBStatsAPI = 1
+				Setlog("MBStats API input = " & $MBStatsAPI, $COLOR_GREEN) ; log the new MBStats API
+				SaveConfig()
+			EndIf
 
 EndFunc   ;==>MBStatsAPI
