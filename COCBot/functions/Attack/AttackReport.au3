@@ -128,7 +128,7 @@ Func AttackReport()
 
 	; ==================== Begin MBStats Mod ====================
 	SetLog("Sending attack report to mbstats.net...", $COLOR_BLUE)
-	$MyApiKey = $MBStatsAPI ; <---- insert api key here
+	$MyApiKey = $MBStatsAPI
 	$sPD = 'apikey=' & $MyApiKey & '&ctrophy=' & $iTrophyCurrent & '&cgold=' & _
 			$iGoldCurrent & '&celix=' & $iElixirCurrent & '&cdelix=' & $iDarkCurrent & '&search=' & _
 			$SearchCount & '&gold=' & $iGoldLast & '&elix=' & $iElixirLast & '&delix=' & $iDarkLast & _
